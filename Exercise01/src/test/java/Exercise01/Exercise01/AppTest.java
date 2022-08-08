@@ -1,4 +1,4 @@
-package Ejercicio1.MainApp;
+package Exercise01.Exercise01;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
