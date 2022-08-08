@@ -23,9 +23,9 @@ public class ViewForm extends JFrame {
 	 * Create the frame.
 	 */
 	public ViewForm() {
-		setTitle("CLIENT FORM MANAGER 1.1");
+		setTitle("CLIENT FORM MANAGER v1.0");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 563, 249);
+		setBounds(100, 100, 563, 203);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
@@ -73,33 +73,43 @@ public class ViewForm extends JFrame {
 		panel.add(addressField);
 		addressField.setColumns(10);
 		
-		sendButton = new JButton("INSERT");
-		sendButton.setBounds(454, 20, 85, 21);
-		contentPane.add(sendButton);
-		
-		cancelButton = new JButton("CANCEL");
-		cancelButton.setBounds(454, 172, 85, 21);
-		contentPane.add(cancelButton);
-		
-		JButton btnNewButton = new JButton("UPDATE");
-		btnNewButton.setBounds(454, 46, 85, 21);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("DELETE");
-		btnNewButton_1.setBounds(454, 71, 85, 21);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("DISPLAY");
-		btnNewButton_2.setForeground(Color.RED);
-		btnNewButton_2.setBounds(454, 96, 85, 21);
-		contentPane.add(btnNewButton_2);
-		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(298, 43, 80, 11);
+		comboBox.setBounds(294, 96, 80, 11);
 		contentPane.add(comboBox);
 		
 		JLabel lblNewLabel_4 = new JLabel("Client register:");
-		lblNewLabel_4.setBounds(297, 20, 81, 17);
+		lblNewLabel_4.setBounds(293, 82, 81, 17);
 		contentPane.add(lblNewLabel_4);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		panel_1.setBounds(413, 20, 101, 97);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		sendButton = new JButton("NEW");
+		sendButton.setBounds(10, 10, 85, 21);
+		panel_1.add(sendButton);
+		
+		JButton btnNewButton = new JButton("UPDATE");
+		btnNewButton.setBounds(10, 36, 85, 21);
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("DELETE");
+		btnNewButton_1.setBounds(10, 63, 85, 21);
+		panel_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("DISPLAY");
+		btnNewButton_2.setBounds(284, 20, 85, 21);
+		contentPane.add(btnNewButton_2);
+		btnNewButton_2.setForeground(Color.RED);
+		
+		JButton btnNewButton_3 = new JButton("SAVE");
+		btnNewButton_3.setBounds(284, 51, 85, 21);
+		contentPane.add(btnNewButton_3);
+		
+		cancelButton = new JButton("CANCEL");
+		cancelButton.setBounds(423, 127, 85, 21);
+		contentPane.add(cancelButton);
 	}
 }
