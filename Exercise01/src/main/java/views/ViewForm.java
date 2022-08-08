@@ -1,15 +1,13 @@
 package views;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
-import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.Color;
 
 public class ViewForm extends JFrame {
 
@@ -25,9 +23,9 @@ public class ViewForm extends JFrame {
 	 * Create the frame.
 	 */
 	public ViewForm() {
-		setTitle("CLIENT FORM");
+		setTitle("CLIENT FORM MANAGER 1.1");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 314, 247);
+		setBounds(100, 100, 563, 249);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
@@ -35,7 +33,7 @@ public class ViewForm extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel.setBounds(34, 32, 217, 128);
+		panel.setBounds(22, 20, 217, 128);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -75,12 +73,33 @@ public class ViewForm extends JFrame {
 		panel.add(addressField);
 		addressField.setColumns(10);
 		
-		sendButton = new JButton("SEND");
-		sendButton.setBounds(34, 170, 85, 21);
+		sendButton = new JButton("INSERT");
+		sendButton.setBounds(454, 20, 85, 21);
 		contentPane.add(sendButton);
 		
 		cancelButton = new JButton("CANCEL");
-		cancelButton.setBounds(166, 170, 85, 21);
+		cancelButton.setBounds(454, 172, 85, 21);
 		contentPane.add(cancelButton);
+		
+		JButton btnNewButton = new JButton("UPDATE");
+		btnNewButton.setBounds(454, 46, 85, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("DELETE");
+		btnNewButton_1.setBounds(454, 71, 85, 21);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("DISPLAY");
+		btnNewButton_2.setForeground(Color.RED);
+		btnNewButton_2.setBounds(454, 96, 85, 21);
+		contentPane.add(btnNewButton_2);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(298, 43, 80, 11);
+		contentPane.add(comboBox);
+		
+		JLabel lblNewLabel_4 = new JLabel("Client register:");
+		lblNewLabel_4.setBounds(297, 20, 81, 17);
+		contentPane.add(lblNewLabel_4);
 	}
 }
