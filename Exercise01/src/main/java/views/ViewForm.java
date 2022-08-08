@@ -14,10 +14,12 @@ import javax.swing.JButton;
 public class ViewForm extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	public JTextField dniField;
+	public JTextField nameField;
+	public JTextField surnameField;
+	public JTextField addressField;
+	public JButton sendButton;
+	public JButton cancelButton;
 
 	/**
 	 * Create the frame.
@@ -53,32 +55,32 @@ public class ViewForm extends JFrame {
 		lblNewLabel_3.setBounds(10, 89, 45, 13);
 		panel.add(lblNewLabel_3);
 		
-		textField = new JTextField();
-		textField.setBounds(93, 17, 96, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		dniField = new JTextField();
+		dniField.setBounds(93, 17, 96, 19);
+		panel.add(dniField);
+		dniField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(93, 40, 96, 19);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		nameField = new JTextField();
+		nameField.setBounds(93, 40, 96, 19);
+		panel.add(nameField);
+		nameField.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(93, 63, 96, 19);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		surnameField = new JTextField();
+		surnameField.setBounds(93, 63, 96, 19);
+		panel.add(surnameField);
+		surnameField.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(93, 86, 96, 19);
-		panel.add(textField_3);
-		textField_3.setColumns(10);
+		addressField = new JTextField();
+		addressField.setBounds(93, 86, 96, 19);
+		panel.add(addressField);
+		addressField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("SEND");
-		btnNewButton.setBounds(34, 170, 85, 21);
-		contentPane.add(btnNewButton);
+		sendButton = new JButton("SEND");
+		sendButton.setBounds(34, 170, 85, 21);
+		contentPane.add(sendButton);
 		
-		JButton btnNewButton_1 = new JButton("CANCEL");
-		btnNewButton_1.setBounds(166, 170, 85, 21);
-		contentPane.add(btnNewButton_1);
+		cancelButton = new JButton("CANCEL");
+		cancelButton.setBounds(166, 170, 85, 21);
+		contentPane.add(cancelButton);
 	}
 }
