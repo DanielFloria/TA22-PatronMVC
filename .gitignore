@@ -160,4 +160,4 @@ $RECYCLE.BIN/
 target/
 .project
 .classpath
-src/main/java/models/Credentials.java
+Exercise01/src/main/java/models/Credentials.java
