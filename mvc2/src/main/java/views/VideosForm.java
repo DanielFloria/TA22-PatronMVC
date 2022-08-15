@@ -12,13 +12,12 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
-public class ViewForm extends JFrame {
+public class VideosForm extends JFrame {
 
 	private JPanel contentPane;
-	public JTextField dniField;
-	public JTextField nameField;
-	public JTextField surnameField;
-	public JTextField addressField;
+	public JTextField idField;
+	public JTextField titleField;
+	public JTextField cli_idField;
 	public JButton cancelButton;
 	public JTextPane textArea;
 	public JButton btnSave; 
@@ -30,8 +29,8 @@ public class ViewForm extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ViewForm() {
-		setTitle("CLIENT FORM MANAGER v1.0");
+	public VideosForm() {
+		setTitle("video library manager >> VIDEO FORM");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 434, 386);
 		
@@ -42,54 +41,45 @@ public class ViewForm extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel.setBounds(22, 20, 217, 144);
+		panel.setBounds(22, 0, 217, 165);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("DNI");
-		lblNewLabel.setBounds(10, 20, 45, 13);
+		JLabel lblNewLabel = new JLabel("ID");
+		lblNewLabel.setBounds(10, 29, 45, 13);
 		panel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("NAME");
-		lblNewLabel_1.setBounds(10, 43, 45, 13);
+		JLabel lblNewLabel_1 = new JLabel("TITLE");
+		lblNewLabel_1.setBounds(10, 64, 45, 13);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("SURNAME");
-		lblNewLabel_2.setBounds(10, 66, 73, 13);
-		panel.add(lblNewLabel_2);
+		idField = new JTextField();
+		idField.setBounds(93, 26, 96, 19);
+		panel.add(idField);
+		idField.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("ADDRESS");
-		lblNewLabel_3.setBounds(10, 89, 57, 13);
-		panel.add(lblNewLabel_3);
+		titleField = new JTextField();
+		titleField.setBounds(93, 58, 96, 19);
+		panel.add(titleField);
+		titleField.setColumns(10);
 		
-		dniField = new JTextField();
-		dniField.setBounds(93, 17, 96, 19);
-		panel.add(dniField);
-		dniField.setColumns(10);
-		
-		nameField = new JTextField();
-		nameField.setBounds(93, 40, 96, 19);
-		panel.add(nameField);
-		nameField.setColumns(10);
-		
-		surnameField = new JTextField();
-		surnameField.setBounds(93, 63, 96, 19);
-		panel.add(surnameField);
-		surnameField.setColumns(10);
-		
-		addressField = new JTextField();
-		addressField.setBounds(93, 86, 96, 19);
-		panel.add(addressField);
-		addressField.setColumns(10);
-		
-		JLabel lblNewLabel_5 = new JLabel("ID");
-		lblNewLabel_5.setBounds(10, 119, 46, 14);
-		panel.add(lblNewLabel_5);
+		cli_idField = new JTextField();
+		cli_idField.setBounds(93, 86, 96, 19);
+		panel.add(cli_idField);
+		cli_idField.setColumns(10);
 		
 		txtID = new JTextField();
-		txtID.setBounds(93, 116, 96, 20);
+		txtID.setBounds(93, 115, 96, 20);
 		panel.add(txtID);
 		txtID.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("DIRECTOR");
+		lblNewLabel_2.setBounds(10, 92, 73, 13);
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("CLI_ID");
+		lblNewLabel_3.setBounds(10, 122, 45, 13);
+		panel.add(lblNewLabel_3);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -120,6 +110,11 @@ public class ViewForm extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setBounds(22, 175, 217, 147);
 		contentPane.add(scrollPane);
+		
+		JButton btnNewButton = new JButton("CLIENT");
+		btnNewButton.setForeground(Color.GRAY);
+		btnNewButton.setBounds(290, 301, 85, 21);
+		contentPane.add(btnNewButton);
 		
 	}
 }

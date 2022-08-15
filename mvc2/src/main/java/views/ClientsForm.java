@@ -31,7 +31,7 @@ public class ClientsForm extends JFrame {
 	 * Create the frame.
 	 */
 	public ClientsForm() {
-		setTitle("CLIENT FORM MANAGER v1.0");
+		setTitle("video library manager >> CLIENT FORM");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 434, 386);
 		
@@ -120,6 +120,11 @@ public class ClientsForm extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setBounds(22, 175, 217, 147);
 		contentPane.add(scrollPane);
+		
+		JButton btnNewButton = new JButton("VIDEO  LIBRARY");
+		btnNewButton.setForeground(Color.GRAY);
+		btnNewButton.setBounds(249, 301, 145, 21);
+		contentPane.add(btnNewButton);
 		
 	}
 }
