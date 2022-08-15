@@ -8,6 +8,9 @@ import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.JComboBox;
 import java.awt.Color;
+import javax.swing.JTextPane;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 public class ViewForm extends JFrame {
 
@@ -16,8 +19,13 @@ public class ViewForm extends JFrame {
 	public JTextField nameField;
 	public JTextField surnameField;
 	public JTextField addressField;
-	public JButton sendButton;
 	public JButton cancelButton;
+	public JTextPane textArea;
+	public JButton btnSave; 
+	public JTextField txtID;
+	public JButton btnDelete;
+	public JButton btnUpdate;
+	
 
 	/**
 	 * Create the frame.
@@ -25,15 +33,16 @@ public class ViewForm extends JFrame {
 	public ViewForm() {
 		setTitle("CLIENT FORM MANAGER v1.0");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 563, 203);
+		setBounds(100, 100, 434, 386);
+		
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
-		setContentPane(contentPane);
+		setContentPane(contentPane);		
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel.setBounds(22, 20, 217, 128);
+		panel.setBounds(22, 20, 217, 144);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -50,7 +59,7 @@ public class ViewForm extends JFrame {
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("ADDRESS");
-		lblNewLabel_3.setBounds(10, 89, 45, 13);
+		lblNewLabel_3.setBounds(10, 89, 57, 13);
 		panel.add(lblNewLabel_3);
 		
 		dniField = new JTextField();
@@ -73,43 +82,44 @@ public class ViewForm extends JFrame {
 		panel.add(addressField);
 		addressField.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(294, 96, 80, 11);
-		contentPane.add(comboBox);
+		JLabel lblNewLabel_5 = new JLabel("ID");
+		lblNewLabel_5.setBounds(10, 119, 46, 14);
+		panel.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_4 = new JLabel("Client register:");
-		lblNewLabel_4.setBounds(293, 82, 81, 17);
-		contentPane.add(lblNewLabel_4);
+		txtID = new JTextField();
+		txtID.setBounds(93, 116, 96, 20);
+		panel.add(txtID);
+		txtID.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_1.setBounds(413, 20, 101, 97);
+		panel_1.setBounds(274, 20, 101, 97);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		sendButton = new JButton("NEW");
-		sendButton.setBounds(10, 10, 85, 21);
-		panel_1.add(sendButton);
+		btnUpdate = new JButton("UPDATE");
+		btnUpdate.setBounds(10, 36, 85, 21);
+		panel_1.add(btnUpdate);
 		
-		JButton btnNewButton = new JButton("UPDATE");
-		btnNewButton.setBounds(10, 36, 85, 21);
-		panel_1.add(btnNewButton);
+		btnDelete = new JButton("DELETE");
+		btnDelete.setBounds(10, 63, 85, 21);
+		panel_1.add(btnDelete);
 		
-		JButton btnNewButton_1 = new JButton("DELETE");
-		btnNewButton_1.setBounds(10, 63, 85, 21);
-		panel_1.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("DISPLAY");
-		btnNewButton_2.setBounds(284, 20, 85, 21);
-		contentPane.add(btnNewButton_2);
-		btnNewButton_2.setForeground(Color.RED);
-		
-		JButton btnNewButton_3 = new JButton("SAVE");
-		btnNewButton_3.setBounds(284, 51, 85, 21);
-		contentPane.add(btnNewButton_3);
+		btnSave = new JButton("SAVE");
+		btnSave.setBounds(10, 11, 85, 21);
+		panel_1.add(btnSave);
 		
 		cancelButton = new JButton("CANCEL");
-		cancelButton.setBounds(423, 127, 85, 21);
+		cancelButton.setBounds(284, 127, 85, 21);
 		contentPane.add(cancelButton);
+		
+		textArea = new JTextPane();
+		textArea.setBounds(22, 175, 217, 147);
+		contentPane.add(textArea);
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		scrollPane.setBounds(22, 175, 217, 147);
+		contentPane.add(scrollPane);
+		
 	}
 }

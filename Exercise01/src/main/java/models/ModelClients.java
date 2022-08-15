@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import models.Credentials;
+
 public class ModelClients {
 	private int id;
 	private int dni;
@@ -18,11 +20,11 @@ public class ModelClients {
 	private ResultSet clients;
 	
 	private Connection connection;
-	private String localServer;
-	private String localUser;
-	private String localPassword;
+	private String localServer = Credentials.LOCAL_SERVER;
+	private String localUser = Credentials.LOCAL_USER;
+	private String localPassword = Credentials.LOCAL_PASSWORD;
 	
-	private String databaseName;
+	private String databaseName = Credentials.DATABASE_NAME;
 	private String tableName;
 	
 	// Constructor
@@ -33,7 +35,8 @@ public class ModelClients {
 	// Métodos
 	public void createClient(String databaseName, String name, String surname, String address, int dni) {
 		try {
-			String query_insert = "insert into clientes values (" + name + ", " + surname + ", " + address + ", " + dni + ");";
+			openDatabaseConnection(localServer, localUser, localPassword);
+			String query_insert = "insert into clientes (nombre,apellido,direccion,dni,fecha) values ('" + name + "', '" + surname + "', '" + address + "', " + dni + ", now());";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
@@ -50,7 +53,10 @@ public class ModelClients {
 	}
 	
 	public ResultSet getClients(String databaseName) {
+		
+		
 		try {
+			openDatabaseConnection(localServer, localUser, localPassword);
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
 			st_use_database.executeUpdate(query_use);
@@ -69,7 +75,8 @@ public class ModelClients {
 	
 	public void updateClient(String databaseName, int id, String name, String surname, String address, int dni) {
 		try {
-			String query_update = "update clientes set nombre='" + name + "', apellido='" + surname + "', direccion='" + address + "', dni='" + dni + "',  where id='" + id + ";";
+			openDatabaseConnection(localServer, localUser, localPassword);
+			String query_update = "update clientes set nombre='" + name + "', apellido='" + surname + "', direccion='" + address + "', dni=" + dni + " where id=" + id + ";";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
@@ -84,8 +91,10 @@ public class ModelClients {
 			System.out.println(e.getMessage());
 		}
 	}
+	
 	public void deleteClient(String databaseName, int id) {
 		try {
+			openDatabaseConnection(localServer, localUser, localPassword);
 			String query_delete = "delete from clientes where id=" + id + ";";
 			
 			String query_use = "use " + databaseName + ";";
