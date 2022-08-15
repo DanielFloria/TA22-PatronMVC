@@ -140,38 +140,6 @@ public class ModelVideos {
 		this.id = id;
 	}
 	
-	public int getDni() {
-		return dni;
-	}
-	
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getSurname() {
-		return surname;
-	}
-	
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	
-	public String getAddress() {
-		return address;
-	}
-	
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	
 	public String getLocalServer() {
 		return localServer;
 	}
