@@ -6,14 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import models.ModelClients;
-import views.ViewClientList;
 import views.ViewForm;
 
 public class ControllerClients implements ActionListener{
 	
 	ModelClients model = new ModelClients();
 	ViewForm viewForm = new ViewForm();
-	ViewClientList listClient = new ViewClientList();
 	
 	public ControllerClients (ModelClients model,ViewForm viewForm) throws SQLException{
 		this.model = model;
