@@ -17,14 +17,14 @@ public class VideosForm extends JFrame {
 	private JPanel contentPane;
 	public JTextField idField;
 	public JTextField titleField;
-	public JTextField cli_idField;
+	public JTextField directorField;
 	public JButton cancelButton;
 	public JTextPane textArea;
 	public JButton btnSave; 
-	public JTextField txtID;
+	public JTextField cliIdField;
 	public JButton btnDelete;
 	public JButton btnUpdate;
-	
+	public JButton btnClients;
 
 	/**
 	 * Create the frame.
@@ -63,15 +63,15 @@ public class VideosForm extends JFrame {
 		panel.add(titleField);
 		titleField.setColumns(10);
 		
-		cli_idField = new JTextField();
-		cli_idField.setBounds(93, 86, 96, 19);
-		panel.add(cli_idField);
-		cli_idField.setColumns(10);
+		directorField = new JTextField();
+		directorField.setBounds(93, 86, 96, 19);
+		panel.add(directorField);
+		directorField.setColumns(10);
 		
-		txtID = new JTextField();
-		txtID.setBounds(93, 115, 96, 20);
-		panel.add(txtID);
-		txtID.setColumns(10);
+		cliIdField = new JTextField();
+		cliIdField.setBounds(93, 115, 96, 20);
+		panel.add(cliIdField);
+		cliIdField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("DIRECTOR");
 		lblNewLabel_2.setBounds(10, 92, 73, 13);
@@ -111,10 +111,10 @@ public class VideosForm extends JFrame {
 		scrollPane.setBounds(22, 175, 217, 147);
 		contentPane.add(scrollPane);
 		
-		JButton btnNewButton = new JButton("CLIENT");
-		btnNewButton.setForeground(Color.GRAY);
-		btnNewButton.setBounds(290, 301, 85, 21);
-		contentPane.add(btnNewButton);
+		btnClients = new JButton("CLIENT");
+		btnClients.setForeground(Color.GRAY);
+		btnClients.setBounds(290, 301, 85, 21);
+		contentPane.add(btnClients);
 		
 	}
 }

@@ -25,6 +25,7 @@ public class ClientsForm extends JFrame {
 	public JTextField txtID;
 	public JButton btnDelete;
 	public JButton btnUpdate;
+	public JButton btnVideos;
 	
 
 	/**
@@ -121,10 +122,10 @@ public class ClientsForm extends JFrame {
 		scrollPane.setBounds(22, 175, 217, 147);
 		contentPane.add(scrollPane);
 		
-		JButton btnNewButton = new JButton("VIDEO  LIBRARY");
-		btnNewButton.setForeground(Color.GRAY);
-		btnNewButton.setBounds(249, 301, 145, 21);
-		contentPane.add(btnNewButton);
+		btnVideos = new JButton("VIDEO  LIBRARY");
+		btnVideos.setForeground(Color.GRAY);
+		btnVideos.setBounds(249, 301, 145, 21);
+		contentPane.add(btnVideos);
 		
 	}
 }
