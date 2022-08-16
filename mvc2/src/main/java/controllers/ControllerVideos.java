@@ -4,16 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import models.ModelVideos;
-import views.ViewForm;
+import views.VideosForm;
 
 public class ControllerVideos implements ActionListener{
 	
 	ModelVideos model = new ModelVideos();
-	ViewForm viewForm = new ViewForm();
+	VideosForm videosForm = new VideosForm();
 	
-	public ControllerVideos(ModelVideos model, ViewForm viewForm) {
+	public ControllerVideos(ModelVideos model, VideosForm videosForm) {
 		this.model = model;
-		this.viewForm = viewForm;
+		this.videosForm = videosForm;
 	}
 
 	@Override
