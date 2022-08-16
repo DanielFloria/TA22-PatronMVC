@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import models.Credentials;
-
 public class ModelVideos {
 	private int id;
 	private String title;
@@ -34,7 +32,7 @@ public class ModelVideos {
 	public void createVideo(String databaseName, String title, String director, int cli_id) {
 		try {
 			openDatabaseConnection(localServer, localUser, localPassword);
-			String query_insert = "insert into clientes (nombre,apellido,direccion,dni,fecha) values ('" + name + "', '" + surname + "', '" + address + "', " + dni + ", now());";
+			String query_insert = "insert into videos (title,director,cli_id) values ('" + title + "', '" + director + "', " + cli_id + ");";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
@@ -50,7 +48,7 @@ public class ModelVideos {
 		}
 	}
 	
-	public ResultSet getClients(String databaseName) {
+	public ResultSet getVideos(String databaseName) {
 		
 		
 		try {
@@ -59,7 +57,7 @@ public class ModelVideos {
 			Statement st_use_database = connection.createStatement();
 			st_use_database.executeUpdate(query_use);
 			
-			String result = "select * from clientes";
+			String result = "select * from videos";
 			Statement st_select = connection.createStatement();
 			ResultSet rs_registers = st_select.executeQuery(result);
 			return rs_registers;
@@ -71,10 +69,10 @@ public class ModelVideos {
 		return null;
 	}
 	
-	public void updateClient(String databaseName, int id, String name, String surname, String address, int dni) {
+	public void updateVideo(String databaseName, int id, String title, String director, int cli_id) {
 		try {
 			openDatabaseConnection(localServer, localUser, localPassword);
-			String query_update = "update clientes set nombre='" + name + "', apellido='" + surname + "', direccion='" + address + "', dni=" + dni + " where id=" + id + ";";
+			String query_update = "update videos set title='" + title + "', director='" + director + "', cli_id=" + cli_id + " where id=" + id + ";";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
@@ -90,10 +88,10 @@ public class ModelVideos {
 		}
 	}
 	
-	public void deleteClient(String databaseName, int id) {
+	public void deleteVideo(String databaseName, int id) {
 		try {
 			openDatabaseConnection(localServer, localUser, localPassword);
-			String query_delete = "delete from clientes where id=" + id + ";";
+			String query_delete = "delete from videos where id=" + id + ";";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
