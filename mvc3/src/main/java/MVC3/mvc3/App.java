@@ -2,9 +2,9 @@ package MVC3.mvc3;
 
 import java.awt.EventQueue;
 
-import MVC3.views.ViewScientificForm;
 import controllers.ControllerCientificos;
 import models.ModelCientificos;
+import views.ViewScientificForm;
 
 /**
  * Hello world!

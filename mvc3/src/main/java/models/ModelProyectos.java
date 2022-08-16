@@ -29,6 +29,16 @@ public class ModelProyectos {
 	public ModelProyectos() {
 		
 	}
+	
+	
+
+	public ModelProyectos(String id, String nombre, int horas) {
+		this.id = id;
+		this.nombre = nombre;
+		this.horas = horas;
+	}
+
+
 
 	// Métodos
 	public void createProyecto(String databaseName, String id, String nombre, int horas) {

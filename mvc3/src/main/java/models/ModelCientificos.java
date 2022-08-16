@@ -92,7 +92,7 @@ public class ModelCientificos {
 	public void deleteCientifico(String databaseName, String dni) {
 		try {
 			openDatabaseConnection(localServer, localUser, localPassword);
-			String query_delete = "delete from cientificos where dni=" + dni + ";";
+			String query_delete = "delete from cientificos where dni='" + dni + "';";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();
@@ -178,4 +178,14 @@ public class ModelCientificos {
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
+
+	public String getNomApels() {
+		return nomApels;
+	}
+
+	public void setNomApels(String nomApels) {
+		this.nomApels = nomApels;
+	}
+	
+	
 }

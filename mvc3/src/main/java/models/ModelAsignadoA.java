@@ -33,7 +33,7 @@ public class ModelAsignadoA {
 	public void createAsignadoA(String databaseName, String cientifico, String proyecto) {
 		try {
 			openDatabaseConnection(localServer, localUser, localPassword);
-			String query_insert = "insert into asignado_a values ('" + cientifico + "', '" + proyecto + "';";
+			String query_insert = "insert into asignado_a values ('" + cientifico + "', '" + proyecto + "');";
 			
 			String query_use = "use " + databaseName + ";";
 			Statement st_use_database = connection.createStatement();

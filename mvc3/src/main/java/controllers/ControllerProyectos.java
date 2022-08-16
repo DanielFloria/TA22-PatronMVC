@@ -6,18 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
-import MVC3.views.ViewAssignmentForm;
-import MVC3.views.ViewProjectForm;
-import MVC3.views.ViewScientificForm;
 import models.ModelAsignadoA;
+import models.ModelCientificos;
 import models.ModelProyectos;
+import views.ViewAssignmentForm;
+import views.ViewProjectForm;
+import views.ViewScientificForm;
 
 public class ControllerProyectos implements ActionListener{
 
 	ModelProyectos modelProyectos = new ModelProyectos();
 	ViewProjectForm proyectosForm = new ViewProjectForm();
-	ViewScientificForm cientificosForm = new ViewScientificForm();
 	
 	public ControllerProyectos(ModelProyectos modelProyectos, ViewProjectForm proyectosForm) {
 		this.modelProyectos = modelProyectos;
@@ -29,6 +30,7 @@ public class ControllerProyectos implements ActionListener{
 		proyectosForm.btnDelete.addActionListener(this);
 		proyectosForm.btnCientificos.addActionListener(this);
 		proyectosForm.btnAsignados.addActionListener(this);
+		proyectosForm.btnDisplay.addActionListener(this);
 	}
 
 	@Override
@@ -46,10 +48,21 @@ public class ControllerProyectos implements ActionListener{
 		}else if (proyectosForm.btnCancel == e.getSource()) {
 			borrarCampos();
 		}else if (proyectosForm.btnCientificos == e.getSource()) {
-			proyectosForm.setVisible(false);
-			cientificosForm.setVisible(true);
+			vistaCientificos();
 		}else if (proyectosForm.btnAsignados == e.getSource()) {
-			vistaAsignados();
+			try {
+				vistaAsignados();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}else if (proyectosForm.btnDisplay == e.getSource()) {
+			try {
+				imprimirProyectos();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 	
@@ -75,16 +88,17 @@ public class ControllerProyectos implements ActionListener{
 	
 	public void imprimirProyectos() throws SQLException {
 		ResultSet proyectos = modelProyectos.getProyectos(modelProyectos.getDatabaseName());
-		String datos = null;
+		String datos = "";
 //		proyectosForm.textArea.setText(null);
 		while (proyectos.next()) {
 			datos = datos + "ID: " + proyectos.getString("id") + "\n";
 			datos = datos + "Nombre: " + proyectos.getString("nombre") + "\n";
-			datos = datos + "Horas: " + proyectos.getInt("horas") + "\n";
+			datos = datos + "Horas: " + proyectos.getInt("horas") + "\n\n";
 //			proyectosForm.textArea.setText(proyectosForm.textArea.getText() + "ID: " + proyectos.getString("id") + "\n");
 //			proyectosForm.textArea.setText(proyectosForm.textArea.getText() + "Nombre: " + proyectos.getString("nombre") + "\n");
 //			proyectosForm.textArea.setText(proyectosForm.textArea.getText() + "Horas: " + proyectos.getInt("horas") + "\n");
 		}
+		JOptionPane.showMessageDialog(null, datos);
 	}
 	
 	public void borrarCampos() {
@@ -94,10 +108,18 @@ public class ControllerProyectos implements ActionListener{
 	}
 	
 
-	public void vistaAsignados() {
+	public void vistaAsignados() throws SQLException {
 		proyectosForm.setVisible(false);
 		ModelAsignadoA modelAsignado = new ModelAsignadoA();
 		ViewAssignmentForm asignadosForm = new ViewAssignmentForm();
 		ControllerAsignadoA controllerAsignados = new ControllerAsignadoA(modelAsignado,asignadosForm);
+	}
+	
+	public void vistaCientificos() {
+		proyectosForm.setVisible(false);
+		ModelCientificos modelCientificos = new ModelCientificos();
+		ViewScientificForm vistaCientificos = new ViewScientificForm();
+		
+		ControllerCientificos controllerCientificos = new ControllerCientificos(modelCientificos, vistaCientificos);
 	}
 }

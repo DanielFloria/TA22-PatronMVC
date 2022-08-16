@@ -8,12 +8,14 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import MVC3.views.ViewAssignmentForm;
-import MVC3.views.ViewProjectForm;
-import MVC3.views.ViewScientificForm;
+import javax.swing.JOptionPane;
+
 import models.ModelAsignadoA;
 import models.ModelCientificos;
 import models.ModelProyectos;
+import views.ViewAssignmentForm;
+import views.ViewProjectForm;
+import views.ViewScientificForm;
 
 public class ControllerCientificos implements ActionListener{
 	
@@ -31,6 +33,7 @@ public class ControllerCientificos implements ActionListener{
 		cientificosForm.btnDelete.addActionListener(this);
 		cientificosForm.btnProjects.addActionListener(this);
 		cientificosForm.btnAsignados.addActionListener(this);
+		cientificosForm.btnDisplay.addActionListener(this);
 	}
 
 	@Override
@@ -50,14 +53,26 @@ public class ControllerCientificos implements ActionListener{
 		}else if (cientificosForm.btnProjects == e.getSource()) {
 			vistaProyectos();
 		}else if (cientificosForm.btnAsignados == e.getSource()) {
-			vistaAsignados();
+			try {
+				vistaAsignados();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}else if (cientificosForm.btnDisplay == e.getSource()) {
+			try {
+				imprimirCientificos();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 	
 	public void insertarCientifico() {
 		String dni = cientificosForm.dniField.getText();
 		String nombre = cientificosForm.nombreField.getText();
-		model.createCientifico(model.getDatabaseName(), dni, nombre);
+		model.createCientifico(model.getDatabaseName(), nombre, dni);
 	}
 	
 	public void actualizarCientifico() {
@@ -74,14 +89,15 @@ public class ControllerCientificos implements ActionListener{
 	
 	public void imprimirCientificos() throws SQLException {
 		ResultSet cientificos = model.getCientificos(model.getDatabaseName());
-		String datos = null;
+		String datos = "";
 //		cientificosForm.textArea.setText(null);
 		while (cientificos.next()) {
 			datos = datos + "DNI: " + cientificos.getString("dni") + "\n";
-			datos = datos + "Nombre: " + cientificos.getString("nom_apels") + "\n";
+			datos = datos + "Nombre: " + cientificos.getString("nom_apels") + "\n\n";
 //			cientificosForm.textArea.setText(cientificosForm.textArea.getText() + "DNI: " + cientificos.getString("dni") + "\n");
 //			cientificosForm.textArea.setText(cientificosForm.textArea.getText() + "Nombre: " + cientificos.getString("nom_apels") + "\n");
 		}
+		JOptionPane.showMessageDialog(null, datos);
 	}
 	
 	public void borrarCampos() {
@@ -90,13 +106,13 @@ public class ControllerCientificos implements ActionListener{
 	}
 	
 	public void vistaProyectos () {
-		cientificosForm.setVisible(false);
+		cientificosForm.dispose();
 		ModelProyectos modelProyectos = new ModelProyectos();
 		ViewProjectForm proyectosForm = new ViewProjectForm();
 		ControllerProyectos controllerProyectos = new ControllerProyectos(modelProyectos,proyectosForm);
 	}
 	
-	public void vistaAsignados() {
+	public void vistaAsignados() throws SQLException {
 		cientificosForm.setVisible(false);
 		ModelAsignadoA modelAsignado = new ModelAsignadoA();
 		ViewAssignmentForm asignadosForm = new ViewAssignmentForm();

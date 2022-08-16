@@ -1,4 +1,4 @@
-package MVC3.views;
+package views;
 
 import java.awt.Color;
 
@@ -9,16 +9,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ViewAssignmentForm extends JFrame {
 
 	private JPanel contentPane;
-	public JTextField idField;
-	public JTextField dniField;
 	public JButton btnSave;
 	public JButton btnProyectos;
 	public JButton btnCientificos;
-	public JButton btnCancel;
+	public JButton btnDisplay;
+	public JComboBox comboBoxID;
+	public JComboBox comboBoxDNI;
+	public JButton btnDelete;
 
 	/**
 	 * Create the frame.
@@ -26,9 +29,10 @@ public class ViewAssignmentForm extends JFrame {
 	public ViewAssignmentForm() {
 		setTitle("ASSIGNMENT FORM");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 907, 212);
+		setBounds(100, 100, 907, 230);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
@@ -38,72 +42,55 @@ public class ViewAssignmentForm extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("ID/NAME");
-		lblNewLabel.setBounds(10, 29, 65, 16);
+		lblNewLabel.setBounds(10, 50, 65, 16);
 		panel.add(lblNewLabel);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(226, 48, 29, 21);
-		panel.add(comboBox);
-		
-		idField = new JTextField();
-		idField.setBounds(67, 28, 188, 19);
-		panel.add(idField);
-		idField.setColumns(10);
+		comboBoxID = new JComboBox();
+		comboBoxID.setBounds(67, 48, 188, 21);
+		panel.add(comboBoxID);
 		
 		JLabel lblNewLabel_1 = new JLabel("Project candidate id");
-		lblNewLabel_1.setBounds(67, 10, 153, 13);
+		lblNewLabel_1.setBounds(68, 26, 153, 13);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Scientific candidate id");
-		lblNewLabel_2.setBounds(366, 10, 144, 13);
+		lblNewLabel_2.setBounds(366, 26, 144, 13);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("ID/NAME");
-		lblNewLabel_3.setBounds(287, 31, 65, 13);
+		lblNewLabel_3.setBounds(289, 52, 65, 13);
 		panel.add(lblNewLabel_3);
 		
-		dniField = new JTextField();
-		dniField.setBounds(365, 28, 197, 19);
-		panel.add(dniField);
-		dniField.setColumns(10);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(533, 48, 29, 21);
-		panel.add(comboBox_1);
-		
-		JButton btnNewButton = new JButton("ACCEPT");
-		btnNewButton.setForeground(Color.DARK_GRAY);
-		btnNewButton.setBounds(67, 124, 188, 21);
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("ACCEPT");
-		btnNewButton_1.setForeground(Color.DARK_GRAY);
-		btnNewButton_1.setBounds(366, 124, 197, 21);
-		panel.add(btnNewButton_1);
+		comboBoxDNI = new JComboBox();
+		comboBoxDNI.setBounds(366, 48, 196, 21);
+		panel.add(comboBoxDNI);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_1.setBounds(659, 10, 205, 155);
+		panel_1.setBounds(659, 10, 205, 170);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		btnSave = new JButton("DO ASSIGNMENT");
 		btnSave.setForeground(Color.DARK_GRAY);
-		btnSave.setBounds(10, 30, 185, 21);
+		btnSave.setBounds(10, 41, 185, 21);
 		panel_1.add(btnSave);
 		
-		btnCancel = new JButton("CANCEL");
-		btnCancel.setForeground(Color.DARK_GRAY);
-		btnCancel.setBounds(10, 124, 185, 21);
-		panel_1.add(btnCancel);
-		
 		btnCientificos = new JButton("Switch/Scientifics");
-		btnCientificos.setBounds(10, 61, 185, 21);
+		btnCientificos.setBounds(10, 73, 185, 21);
 		panel_1.add(btnCientificos);
 		
 		btnProyectos = new JButton("Switch/Projects");
-		btnProyectos.setBounds(10, 93, 185, 21);
+		btnProyectos.setBounds(10, 103, 185, 21);
 		panel_1.add(btnProyectos);
+		
+		btnDisplay = new JButton("Displayer");
+		btnDisplay.setForeground(Color.RED);
+		btnDisplay.setBounds(10, 11, 185, 23);
+		panel_1.add(btnDisplay);
+		
+		btnDelete = new JButton("Eliminate");
+		btnDelete.setBounds(10, 135, 185, 23);
+		panel_1.add(btnDelete);
 	}
-
 }
