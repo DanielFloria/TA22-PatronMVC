@@ -14,8 +14,14 @@ import javax.swing.border.EtchedBorder;
 public class ViewScientificForm extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	public JTextField dniField;
+	public JTextField nombreField;
+	public JButton btnSave;
+	public JButton btnUpdate;
+	public JButton btnDelete;
+	public JButton btnCancel;
+	public JButton btnProjects;
+	public JButton btnAsignados;
 
 	/**
 	 * Create the frame.
@@ -40,20 +46,20 @@ public class ViewScientificForm extends JFrame {
 		lblNewLabel.setBounds(10, 20, 45, 13);
 		panel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(36, 17, 96, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		dniField = new JTextField();
+		dniField.setBounds(36, 17, 96, 19);
+		panel.add(dniField);
+		dniField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("NAME/SURNAME");
 		lblNewLabel_1.setForeground(Color.DARK_GRAY);
 		lblNewLabel_1.setBounds(10, 54, 96, 13);
 		panel.add(lblNewLabel_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(36, 77, 96, 19);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		nombreField = new JTextField();
+		nombreField.setBounds(36, 77, 96, 19);
+		panel.add(nombreField);
+		nombreField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Scientific data");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -67,20 +73,20 @@ public class ViewScientificForm extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JButton btnNewButton = new JButton("REGISTRATION");
-		btnNewButton.setForeground(Color.BLUE);
-		btnNewButton.setBounds(10, 10, 112, 21);
-		panel_1.add(btnNewButton);
+		btnSave = new JButton("REGISTRATION");
+		btnSave.setForeground(Color.BLUE);
+		btnSave.setBounds(10, 10, 112, 21);
+		panel_1.add(btnSave);
 		
-		JButton btnNewButton_1 = new JButton("Update");
-		btnNewButton_1.setForeground(Color.DARK_GRAY);
-		btnNewButton_1.setBounds(10, 41, 112, 21);
-		panel_1.add(btnNewButton_1);
+		btnUpdate = new JButton("Update");
+		btnUpdate.setForeground(Color.DARK_GRAY);
+		btnUpdate.setBounds(10, 41, 112, 21);
+		panel_1.add(btnUpdate);
 		
-		JButton btnNewButton_2 = new JButton("Eliminate");
-		btnNewButton_2.setForeground(Color.DARK_GRAY);
-		btnNewButton_2.setBounds(10, 72, 112, 21);
-		panel_1.add(btnNewButton_2);
+		btnDelete = new JButton("Eliminate");
+		btnDelete.setForeground(Color.DARK_GRAY);
+		btnDelete.setBounds(10, 72, 112, 21);
+		panel_1.add(btnDelete);
 		
 		JLabel lblNewLabel_3 = new JLabel("scientific data selector");
 		lblNewLabel_3.setForeground(Color.GRAY);
@@ -96,19 +102,19 @@ public class ViewScientificForm extends JFrame {
 		btnNewButton_3.setBounds(518, 20, 116, 21);
 		contentPane.add(btnNewButton_3);
 		
-		JButton btnNewButton_4 = new JButton("CANCEL");
-		btnNewButton_4.setForeground(Color.DARK_GRAY);
-		btnNewButton_4.setBounds(677, 20, 116, 21);
-		contentPane.add(btnNewButton_4);
+		btnCancel = new JButton("CANCEL");
+		btnCancel.setForeground(Color.DARK_GRAY);
+		btnCancel.setBounds(677, 20, 116, 21);
+		contentPane.add(btnCancel);
 		
-		JButton btnNewButton_5 = new JButton("Switch/Projects");
-		btnNewButton_5.setForeground(Color.DARK_GRAY);
-		btnNewButton_5.setBounds(518, 51, 116, 21);
-		contentPane.add(btnNewButton_5);
+		btnProjects = new JButton("Switch/Projects");
+		btnProjects.setForeground(Color.DARK_GRAY);
+		btnProjects.setBounds(518, 51, 116, 21);
+		contentPane.add(btnProjects);
 		
-		JButton btnNewButton_6 = new JButton("Assignments");
-		btnNewButton_6.setForeground(Color.DARK_GRAY);
-		btnNewButton_6.setBounds(518, 82, 116, 21);
-		contentPane.add(btnNewButton_6);
+		btnAsignados = new JButton("Assignments");
+		btnAsignados.setForeground(Color.DARK_GRAY);
+		btnAsignados.setBounds(518, 82, 116, 21);
+		contentPane.add(btnAsignados);
 	}
 }

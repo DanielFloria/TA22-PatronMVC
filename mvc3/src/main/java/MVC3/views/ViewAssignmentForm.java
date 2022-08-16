@@ -13,8 +13,12 @@ import javax.swing.border.EtchedBorder;
 public class ViewAssignmentForm extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	public JTextField idField;
+	public JTextField dniField;
+	public JButton btnSave;
+	public JButton btnProyectos;
+	public JButton btnCientificos;
+	public JButton btnCancel;
 
 	/**
 	 * Create the frame.
@@ -41,10 +45,10 @@ public class ViewAssignmentForm extends JFrame {
 		comboBox.setBounds(226, 48, 29, 21);
 		panel.add(comboBox);
 		
-		textField = new JTextField();
-		textField.setBounds(67, 28, 188, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		idField = new JTextField();
+		idField.setBounds(67, 28, 188, 19);
+		panel.add(idField);
+		idField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Project candidate id");
 		lblNewLabel_1.setBounds(67, 10, 153, 13);
@@ -58,10 +62,10 @@ public class ViewAssignmentForm extends JFrame {
 		lblNewLabel_3.setBounds(287, 31, 65, 13);
 		panel.add(lblNewLabel_3);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(365, 28, 197, 19);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		dniField = new JTextField();
+		dniField.setBounds(365, 28, 197, 19);
+		panel.add(dniField);
+		dniField.setColumns(10);
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(533, 48, 29, 21);
@@ -83,23 +87,23 @@ public class ViewAssignmentForm extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JButton btnNewButton_2 = new JButton("DO ASSIGNMENT");
-		btnNewButton_2.setForeground(Color.DARK_GRAY);
-		btnNewButton_2.setBounds(10, 30, 185, 21);
-		panel_1.add(btnNewButton_2);
+		btnSave = new JButton("DO ASSIGNMENT");
+		btnSave.setForeground(Color.DARK_GRAY);
+		btnSave.setBounds(10, 30, 185, 21);
+		panel_1.add(btnSave);
 		
-		JButton btnNewButton_3 = new JButton("CANCEL");
-		btnNewButton_3.setForeground(Color.DARK_GRAY);
-		btnNewButton_3.setBounds(10, 124, 185, 21);
-		panel_1.add(btnNewButton_3);
+		btnCancel = new JButton("CANCEL");
+		btnCancel.setForeground(Color.DARK_GRAY);
+		btnCancel.setBounds(10, 124, 185, 21);
+		panel_1.add(btnCancel);
 		
-		JButton btnNewButton_4 = new JButton("Switch/Scientifics");
-		btnNewButton_4.setBounds(10, 61, 185, 21);
-		panel_1.add(btnNewButton_4);
+		btnCientificos = new JButton("Switch/Scientifics");
+		btnCientificos.setBounds(10, 61, 185, 21);
+		panel_1.add(btnCientificos);
 		
-		JButton btnNewButton_5 = new JButton("Switch/Projects");
-		btnNewButton_5.setBounds(10, 93, 185, 21);
-		panel_1.add(btnNewButton_5);
+		btnProyectos = new JButton("Switch/Projects");
+		btnProyectos.setBounds(10, 93, 185, 21);
+		panel_1.add(btnProyectos);
 	}
 
 }

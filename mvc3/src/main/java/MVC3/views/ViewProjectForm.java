@@ -13,9 +13,15 @@ import javax.swing.border.EtchedBorder;
 public class ViewProjectForm extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	public JTextField idField;
+	public JTextField nombreField;
+	public JTextField horasField;
+	public JButton btnSave;
+	public JButton btnUpdate;
+	public JButton btnDelete;
+	public JButton btnCancel;
+	public JButton btnCientificos;
+	public JButton btnAsignados;
 
 	/**
 	 * Create the frame.
@@ -40,30 +46,30 @@ public class ViewProjectForm extends JFrame {
 		lblNewLabel.setBounds(10, 20, 91, 16);
 		panel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setBounds(111, 17, 96, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		idField = new JTextField();
+		idField.setEditable(false);
+		idField.setBounds(111, 17, 96, 19);
+		panel.add(idField);
+		idField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("PROJECT NAME");
 		lblNewLabel_1.setForeground(Color.DARK_GRAY);
 		lblNewLabel_1.setBounds(10, 54, 96, 13);
 		panel.add(lblNewLabel_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(111, 46, 96, 19);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		nombreField = new JTextField();
+		nombreField.setBounds(111, 46, 96, 19);
+		panel.add(nombreField);
+		nombreField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("PROJECT HOURS");
 		lblNewLabel_2.setBounds(10, 83, 96, 13);
 		panel.add(lblNewLabel_2);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(111, 75, 96, 19);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		horasField = new JTextField();
+		horasField.setBounds(111, 75, 96, 19);
+		panel.add(horasField);
+		horasField.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -71,20 +77,20 @@ public class ViewProjectForm extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JButton btnNewButton = new JButton("REGISTRATION");
-		btnNewButton.setForeground(Color.BLUE);
-		btnNewButton.setBounds(10, 10, 112, 21);
-		panel_1.add(btnNewButton);
+		btnSave = new JButton("REGISTRATION");
+		btnSave.setForeground(Color.BLUE);
+		btnSave.setBounds(10, 10, 112, 21);
+		panel_1.add(btnSave);
 		
-		JButton btnNewButton_1 = new JButton("Update");
-		btnNewButton_1.setForeground(Color.DARK_GRAY);
-		btnNewButton_1.setBounds(10, 41, 112, 21);
-		panel_1.add(btnNewButton_1);
+		btnUpdate = new JButton("Update");
+		btnUpdate.setForeground(Color.DARK_GRAY);
+		btnUpdate.setBounds(10, 41, 112, 21);
+		panel_1.add(btnUpdate);
 		
-		JButton btnNewButton_2 = new JButton("Eliminate");
-		btnNewButton_2.setForeground(Color.DARK_GRAY);
-		btnNewButton_2.setBounds(10, 72, 112, 21);
-		panel_1.add(btnNewButton_2);
+		btnDelete = new JButton("Eliminate");
+		btnDelete.setForeground(Color.DARK_GRAY);
+		btnDelete.setBounds(10, 72, 112, 21);
+		panel_1.add(btnDelete);
 		
 		JLabel lblNewLabel_3 = new JLabel("project data selector");
 		lblNewLabel_3.setForeground(Color.GRAY);
@@ -100,20 +106,20 @@ public class ViewProjectForm extends JFrame {
 		btnNewButton_3.setBounds(518, 20, 116, 21);
 		contentPane.add(btnNewButton_3);
 		
-		JButton btnNewButton_4 = new JButton("CANCEL");
-		btnNewButton_4.setForeground(Color.DARK_GRAY);
-		btnNewButton_4.setBounds(654, 20, 116, 21);
-		contentPane.add(btnNewButton_4);
+		btnCancel = new JButton("CANCEL");
+		btnCancel.setForeground(Color.DARK_GRAY);
+		btnCancel.setBounds(654, 20, 116, 21);
+		contentPane.add(btnCancel);
 		
-		JButton btnNewButton_5 = new JButton("Switch/Scientifics");
-		btnNewButton_5.setForeground(Color.DARK_GRAY);
-		btnNewButton_5.setBounds(518, 51, 116, 21);
-		contentPane.add(btnNewButton_5);
+		btnCientificos = new JButton("Switch/Scientifics");
+		btnCientificos.setForeground(Color.DARK_GRAY);
+		btnCientificos.setBounds(518, 51, 116, 21);
+		contentPane.add(btnCientificos);
 		
-		JButton btnNewButton_6 = new JButton("Assignments");
-		btnNewButton_6.setForeground(Color.DARK_GRAY);
-		btnNewButton_6.setBounds(518, 82, 116, 21);
-		contentPane.add(btnNewButton_6);
+		btnAsignados = new JButton("Assignments");
+		btnAsignados.setForeground(Color.DARK_GRAY);
+		btnAsignados.setBounds(518, 82, 116, 21);
+		contentPane.add(btnAsignados);
 	}
 
 }
